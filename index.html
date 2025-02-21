@@ -1,10 +1,9 @@
-<!-- Pagina 1 - heroes.html -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Héroes Avengers</title>
+    <title>Los 10 Vengadores</title>
     <style>
         * {
             box-sizing: border-box;
@@ -12,88 +11,187 @@
             padding: 0;
         }
 
-        nav {
-            background-color: #333;
-            padding: 1rem;
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
         }
 
-        ul {
+        nav {
+            background-color: #e62429;
+            padding: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        nav ul {
             list-style: none;
             display: flex;
             justify-content: center;
             gap: 2rem;
         }
 
-        a {
+        nav a {
             color: white;
             text-decoration: none;
-            font-size: 1.2rem;
+            font-weight: bold;
+            font-size: 1.1rem;
         }
 
         .hero-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 2rem;
             padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .card {
             background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-radius: 10px;
             overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
         }
 
         .card img {
             width: 100%;
-            height: 200px;
+            height: 600px;
             object-fit: cover;
+            border-bottom: 3px solid #e62429;
         }
 
         .card-content {
-            padding: 1rem;
+            padding: 1.5rem;
+            text-align: center;
         }
 
-        h1 {
-            text-align: center;
-            padding: 2rem;
+        .card-content h3 {
+            color: #e62429;
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+        }
+
+        .card-content p {
             color: #333;
+            line-height: 1.4;
+        }
+
+        @media (max-width: 768px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                padding: 1rem;
+            }
+            
+            .card img {
+                height: 200px;
+            }
         }
     </style>
 </head>
 <body>
     <nav>
         <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="historia.html">Historia</a></li>
-            <li><a href="personajes.html">Favorito</a></li>
-            <li><a href="heroes.html">Héroes</a></li>
+            <li><a href="index.html" class="nav-link">Inicio</a></li>
+            <li><a href="heroes.html" class="nav-link">Héroes</a></li>
+            <li><a href="historia.html" class="nav-link">Historia</a></li>
+            <li><a href="personajes.html" class="nav-link">Favorito</a></li>
         </ul>
     </nav>
 
-    <h1>Héroes de los Avengers</h1>
-    
     <div class="hero-grid">
-        <!-- Repetir este bloque para cada héroe -->
+        <!-- Iron Man -->
         <div class="card">
-            <img src="https://via.placeholder.com/150" alt="Iron Man">
+            <img src="img/imagen1.jfif" alt="Iron Man">
             <div class="card-content">
                 <h3>Iron Man</h3>
-                <p>Genio, millonario, playboy, filántropo</p>
+                <p>Genio, millonario, playboy, filántropo. Fundador de los Vengadores.</p>
             </div>
         </div>
-        
-        <!-- Agregar más tarjetas aquí (total 10) -->
-        <!-- Ejemplo de segunda tarjeta -->
+
+        <!-- Capitán América -->
         <div class="card">
-            <img src="https://via.placeholder.com/150" alt="Capitán América">
+            <img src="img/imagen2.jfif" alt="Capitán América">
             <div class="card-content">
                 <h3>Capitán América</h3>
-                <p>El primer vengador</p>
+                <p>El primer vengador, símbolo de libertad y justicia.</p>
             </div>
         </div>
-        
-        <!-- Repetir hasta completar 10 personajes -->
+
+        <!-- Thor -->
+        <div class="card">
+            <img src="img/imagen3.jpg" alt="Thor">
+            <div class="card-content">
+                <h3>Thor</h3>
+                <p>Dios del trueno de Asgard, poseedor de Mjolnir.</p>
+            </div>
+        </div>
+
+        <!-- Hulk -->
+        <div class="card">
+            <img src="img/imagen4.jfif" alt="Hulk">
+            <div class="card-content">
+                <h3>Hulk</h3>
+                <p>La bestia más fuerte de los Vengadores.</p>
+            </div>
+        </div>
+
+        <!-- Viuda Negra -->
+        <div class="card">
+            <img src="img/imagen5.jfif" alt="Viuda Negra">
+            <div class="card-content">
+                <h3>Viuda Negra</h3>
+                <p>Espía y experta en artes marciales.</p>
+            </div>
+        </div>
+
+        <!-- Ojo de Halcón -->
+        <div class="card">
+            <img src="img/imagen6.jfif" alt="Ojo de Halcón">
+            <div class="card-content">
+                <h3>Ojo de Halcón</h3>
+                <p>El mejor arquero del mundo.</p>
+            </div>
+        </div>
+
+        <!-- Spider-Man -->
+        <div class="card">
+            <img src="img/imagen7.jpg" alt="Spider-Man">
+            <div class="card-content">
+                <h3>Spider-Man</h3>
+                <p>El héroe arácnido de Queens.</p>
+            </div>
+        </div>
+
+        <!-- Pantera Negra -->
+        <div class="card">
+            <img src="img/imagen8.jfif" alt="Pantera Negra">
+            <div class="card-content">
+                <h3>Pantera Negra</h3>
+                <p>Rey de Wakanda y protector del vibranium.</p>
+            </div>
+        </div>
+
+        <!-- Doctor Strange -->
+        <div class="card">
+            <img src="img/imagen9.jfif" alt="Doctor Strange">
+            <div class="card-content">
+                <h3>Doctor Strange</h3>
+                <p>Hechicero Supremo del universo Marvel.</p>
+            </div>
+        </div>
+
+        <!-- Capitana Marvel -->
+        <div class="card">
+            <img src="img/imagen10.jfif" alt="Capitana Marvel">
+            <div class="card-content">
+                <h3>Capitana Marvel</h3>
+                <p>La guerrera cósmica más poderosa.</p>
+            </div>
+        </div>
     </div>
 </body>
 </html>

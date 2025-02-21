@@ -1,98 +1,310 @@
-<!-- Pagina 1 - heroes.html -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Héroes Avengers</title>
+    <title>Héroes de los Vengadores</title>
     <style>
+        /* Reset CSS */
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
+        /* Estilos generales */
+        body {
+            background-color: #f4f4f4;
+            line-height: 1.6;
+        }
+
+        /* Navegación */
         nav {
-            background-color: #333;
-            padding: 1rem;
+            background: #e62429;
+            padding: 1.5rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
-        ul {
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav-lista {
             list-style: none;
             display: flex;
             justify-content: center;
-            gap: 2rem;
+            gap: 3rem;
         }
 
-        a {
+        .nav-link {
             color: white;
             text-decoration: none;
-            font-size: 1.2rem;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: opacity 0.3s ease;
         }
 
-        .hero-grid {
+        .nav-link:hover {
+            opacity: 0.8;
+        }
+
+        /* Contenedor principal */
+        .main-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        /* Título */
+        .page-title {
+            text-align: center;
+            color: #333;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            padding-top: 2rem;
+        }
+
+        /* Grid de héroes */
+        .heroes-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            padding: 2rem;
+            padding: 2rem 0;
         }
 
-        .card {
+        /* Tarjeta de héroe */
+        .hero-card {
             background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .hero-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-image {
+            height: 350px;
+            position: relative;
             overflow: hidden;
         }
 
-        .card img {
+        .card-image img {
             width: 100%;
-            height: 200px;
+            height: 100%;
             object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .hero-card:hover .card-image img {
+            transform: scale(1.05);
         }
 
         .card-content {
-            padding: 1rem;
+            padding: 1.5rem;
+            position: relative;
         }
 
-        h1 {
-            text-align: center;
-            padding: 2rem;
-            color: #333;
+        .hero-name {
+            color: #e62429;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-description {
+            color: #666;
+            font-size: 1rem;
+            line-height: 1.4;
+            margin-bottom: 1rem;
+        }
+
+        /* Badge de equipo */
+        .team-badge {
+            background: #e62429;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            position: absolute;
+            top: -15px;
+            right: 15px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-lista {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .page-title {
+                font-size: 2rem;
+            }
+
+            .card-image {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-container {
+                padding: 0 1rem;
+            }
+
+            .heroes-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Menú de navegación -->
     <nav>
-        <ul>
-            <li><a href="heroes.html">Héroes</a></li>
-            <li><a href="historia.html">Historia</a></li>
-            <li><a href="favorito.html">Favorito</a></li>
-        </ul>
+        <div class="nav-container">
+            <ul class="nav-lista">
+                <li><a href="index.html" class="nav-link">Inicio</a></li>
+                <li><a href="heroes.html" class="nav-link">Héroes</a></li>
+                <li><a href="historia.html" class="nav-link">Historia</a></li>
+                <li><a href="personajes.html" class="nav-link">Favorito</a></li>
+            </ul>
+        </div>
     </nav>
 
-    <h1>Héroes de los Avengers</h1>
-    
-    <div class="hero-grid">
-        <!-- Repetir este bloque para cada héroe -->
-        <div class="card">
-            <img src="https://via.placeholder.com/150" alt="Iron Man">
-            <div class="card-content">
-                <h3>Iron Man</h3>
-                <p>Genio, millonario, playboy, filántropo</p>
+    <!-- Contenido principal -->
+    <main class="main-container">
+        <h1 class="page-title">Todos los Vengadores</h1>
+
+        <div class="heroes-grid">
+            <!-- Iron Man -->
+            <div class="hero-card">
+                <div class="card-image">
+                    <img src="img/imagen1.jfif" alt="Iron Man">
+                </div>
+                <div class="card-content">
+                    <span class="team-badge">Fundador</span>
+                    <h2 class="hero-name">Iron Man</h2>
+                    <p class="hero-description">Tony Stark, genio multimillonario creador de armaduras tecnológicas avanzadas. Líder estratégico de los Vengadores.</p>
+                </div>
+            </div>
+
+            <!-- Capitán América -->
+            <div class="hero-card">
+                <div class="card-image">
+                    <img src="img/imagen2.jfif" alt="Capitán América">
+                </div>
+                <div class="card-content">
+                    <span class="team-badge">Líder</span>
+                    <h2 class="hero-name">Capitán América</h2>
+                    <p class="hero-description">Steve Rogers, supersoldado de la Segunda Guerra Mundial. Símbolo de justicia y libertad.</p>
+                </div>
+            </div>
+
+            <!-- Thor -->
+            <div class="hero-card">
+                <div class="card-image">
+                    <img src="img/imagen3.jpg" alt="Thor">
+                </div>
+                <div class="card-content">
+                    <span class="team-badge">Asgardiano</span>
+                    <h2 class="hero-name">Thor</h2>
+                    <p class="hero-description">Dios del Trueno de Asgard. Poseedor de Mjolnir y protector de los Nueve Reinos.</p>
+                </div>
+            </div>
+
+            <!-- Hulk -->
+            <div class="hero-card">
+                <div class="card-image">
+                    <img src="img/imagen4.jfif" alt="Hulk">
+                </div>
+                <div class="card-content">
+                    <span class="team-badge">Fuerza Bruta</span>
+                    <h2 class="hero-name">Hulk</h2>
+                    <p class="hero-description">Bruce Banner transformado en coloso verde con fuerza ilimitada. ¡Cuanto más enfadado, más fuerte!</p>
+                </div>
+            </div>
+
+            <!-- Viuda Negra -->
+            <div class="hero-card">
+                <div class="card-image">
+                    <img src="img/imagen5.jfif" alt="Viuda Negra">
+                </div>
+                <div class="card-content">
+                    <span class="team-badge">Espía</span>
+                    <h2 class="hero-name">Viuda Negra</h2>
+                    <p class="hero-description">Natasha Romanoff, experta en artes marciales y espionaje. Agente de S.H.I.E.L.D.</p>
+                </div>
+            </div>
+
+            <!-- Ojo de Halcón -->
+            <div class="hero-card">
+                <div class="card-image">
+                    <img src="img/imagen6.jfif" alt="Ojo de Halcón">
+                </div>
+                <div class="card-content">
+                    <span class="team-badge">Arquero</span>
+                    <h2 class="hero-name">Ojo de Halcón</h2>
+                    <p class="hero-description">Clint Barton, maestro arquero con precisión infalible. Estratega en combate.</p>
+                </div>
+            </div>
+
+            <!-- Spider-Man -->
+            <div class="hero-card">
+                <div class="card-image">
+                    <img src="img/imagen7.jpg" alt="Spider-Man">
+                </div>
+                <div class="card-content">
+                    <span class="team-badge">Héroe Joven</span>
+                    <h2 class="hero-name">Spider-Man</h2>
+                    <p class="hero-description">Peter Parker, estudiante con habilidades arácnidas. "Tu buen vecino Spider-Man".</p>
+                </div>
+            </div>
+
+            <!-- Pantera Negra -->
+            <div class="hero-card">
+                <div class="card-image">
+                    <img src="img/imagen8.jfif" alt="Pantera Negra">
+                </div>
+                <div class="card-content">
+                    <span class="team-badge">Rey de Wakanda</span>
+                    <h2 class="hero-name">Pantera Negra</h2>
+                    <p class="hero-description">T'Challa, monarca de Wakanda. Poseedor de vibranium y habilidades felinas.</p>
+                </div>
+            </div>
+
+            <!-- Doctor Strange -->
+            <div class="hero-card">
+                <div class="card-image">
+                    <img src="img/imagen9.jfif" alt="Doctor Strange">
+                </div>
+                <div class="card-content">
+                    <span class="team-badge">Hechicero Supremo</span>
+                    <h2 class="hero-name">Doctor Strange</h2>
+                    <p class="hero-description">Stephen Strange, maestro de las artes místicas. Protector de la realidad.</p>
+                </div>
+            </div>
+
+            <!-- Capitana Marvel -->
+            <div class="hero-card">
+                <div class="card-image">
+                    <img src="img/imagen10.jfif" alt="Capitana Marvel">
+                </div>
+                <div class="card-content">
+                    <span class="team-badge">Poder Cósmico</span>
+                    <h2 class="hero-name">Capitana Marvel</h2>
+                    <p class="hero-description">Carol Danvers, ex-piloto con poderes cósmicos. La heroína más poderosa del universo.</p>
+                </div>
             </div>
         </div>
-        
-        <!-- Agregar más tarjetas aquí (total 10) -->
-        <!-- Ejemplo de segunda tarjeta -->
-        <div class="card">
-            <img src="https://via.placeholder.com/150" alt="Capitán América">
-            <div class="card-content">
-                <h3>Capitán América</h3>
-                <p>El primer vengador</p>
-            </div>
-        </div>
-        
-        <!-- Repetir hasta completar 10 personajes -->
-    </div>
+    </main>
 </body>
 </html>

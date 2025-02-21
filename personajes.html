@@ -1,52 +1,204 @@
-<!-- Pagina 3 - favorito.html -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personaje Favorito</title>
+    <title>Mi Vengador Favorito</title>
     <style>
-        /* Mismos estilos del nav que en heroes.html */
-       
-        
-        .favorito-container {
-            max-width: 800px;
-            margin: 2rem auto;
-            padding: 2rem;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+        }
+
+        /* Menú de navegación */
+        nav {
+            background: #e62429;
+            padding: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav-lista {
+            list-style: none;
             display: flex;
-            gap: 2rem;
-            align-items: center;
+            justify-content: center;
+            gap: 3rem;
         }
-        
-        .favorito-img {
-            width: 300px;
-            border-radius: 8px;
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
         }
-        
-        h1 {
+
+        .nav-link:hover {
+            color: #ffd700;
+        }
+
+        /* Contenido principal */
+        .heroe-container {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 2rem;
+        }
+
+        .heroe-header {
             text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .heroe-titulo {
+            color: #e62429;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Tarjeta principal */
+        .heroe-card {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .heroe-imagen {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .heroe-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .heroe-subtitulo {
+            color: #e62429;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .heroe-descripcion {
+            color: #444;
+            line-height: 1.7;
+            font-size: 1.1rem;
+        }
+
+        /* Estadísticas */
+        .heroe-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .stat-item {
+            background: #f8f8f8;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #e62429;
+        }
+
+        .stat-titulo {
             color: #333;
-            padding: 2rem 0;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-lista {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .heroe-card {
+                grid-template-columns: 1fr;
+            }
+
+            .heroe-imagen {
+                height: 300px;
+            }
+
+            .heroe-stats {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Menú de navegación -->
     <nav>
-        <ul>
-            <li><a href="heroes.html">Héroes</a></li>
-            <li><a href="historia.html">Historia</a></li>
-            <li><a href="favorito.html">Favorito</a></li>
-        </ul>
+        <div class="nav-container">
+            <ul class="nav-lista">
+                <li><a href="index.html" class="nav-link">Inicio</a></li>
+                <li><a href="heroes.html" class="nav-link">Héroes</a></li>
+                <li><a href="historia.html" class="nav-link">Historia</a></li>
+                <li><a href="personajes.html" class="nav-link">Favorito</a></li>
+            </ul>
+        </div>
     </nav>
 
-    <h1>Mi Personaje Favorito</h1>
-    
-    <div class="favorito-container">
-        <img src="https://via.placeholder.com/300" alt="Iron Man" class="favorito-img">
-        <div>
-            <h2>Iron Man</h2>
-            <p>Anthony Edward Stark, genio inventor y CEO de Stark Industries, usa su armadura tecnológica para proteger al mundo.</p>
+    <!-- Contenido principal -->
+    <main class="heroe-container">
+        <header class="heroe-header">
+            <h1 class="heroe-titulo">Mi Vengador Favorito</h1>
+        </header>
+
+        <div class="heroe-card">
+            <img src="img/imagen1.jfif" alt="Iron Man" class="heroe-imagen">
+            
+            <div class="heroe-info">
+                <div>
+                    <h2 class="heroe-subtitulo">Iron Man</h2>
+                    <p class="heroe-descripcion">
+                        Anthony Edward Stark, genio inventor, playboy y filántropo. CEO de Industrias Stark 
+                        y fundador de los Vengadores. Armado con una armadura tecnológica de última generación,
+                        combate las amenazas globales con su ingenio y tecnología avanzada.
+                    </p>
+                </div>
+
+                <div class="heroe-stats">
+                    <div class="stat-item">
+                        <h3 class="stat-titulo">Poderes y habilidades</h3>
+                        <ul>
+                            <li>Armadura de alta tecnología</li>
+                            <li>Inteligencia sobrehumana</li>
+                            <li>Vuelo supersónico</li>
+                            <li>Sistemas de armamento avanzado</li>
+                        </ul>
+                    </div>
+
+                    <div class="stat-item">
+                        <h3 class="stat-titulo">Datos clave</h3>
+                        <ul>
+                            <li>Primera aparición: 1963</li>
+                            <li>Aliados principales: War Machine, Spider-Man</li>
+                            <li>Enemigo principal: Thanos</li>
+                            <li>Películas: 10 apariciones</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
+    </main>
 </body>
 </html>

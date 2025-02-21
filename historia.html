@@ -1,42 +1,172 @@
-<!-- Pagina 2 - historia.html -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Historia Avengers</title>
+    <title>Historia Completa de los Vengadores</title>
     <style>
-       
-        
-        .historia-container {
-            max-width: 800px;
-            margin: 2rem auto;
-            padding: 0 2rem;
-            line-height: 1.6;
-            color: #666;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
         }
-        
-        h1 {
+
+        body {
+            background-color: #f8f9fa;
+            line-height: 1.6;
+        }
+
+        /* Menú de navegación */
+        nav {
+            background: #e62429;
+            padding: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        /* Contenido principal */
+        .historia-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .historia-section {
+            margin-bottom: 4rem;
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .historia-titulo {
+            color: #e62429;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
             text-align: center;
+        }
+
+        .historia-subtitulo {
             color: #333;
-            padding: 2rem 0;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .historia-texto {
+            color: #444;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            text-align: justify;
+        }
+
+        .historia-imagen {
+            width: 100%;
+            max-width: 800px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin: 2rem auto;
+            display: block;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .historia-imagen {
+                height: 250px;
+            }
+
+            .historia-titulo {
+                font-size: 2rem;
+            }
+
+            .historia-subtitulo {
+                font-size: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
     <nav>
         <ul>
-            <li><a href="heroes.html">Héroes</a></li>
-            <li><a href="historia.html">Historia</a></li>
-            <li><a href="favorito.html">Favorito</a></li>
+            <li><a href="index.html" class="nav-link">Inicio</a></li>
+            <li><a href="heroes.html" class="nav-link">Héroes</a></li>
+            <li><a href="historia.html" class="nav-link">Historia</a></li>
+            <li><a href="personajes.html" class="nav-link">Favorito</a></li>
         </ul>
     </nav>
 
-    <h1>Historia de los Avengers</h1>
-    
     <div class="historia-container">
-        <p>Los Avengers son un equipo de superhéroes creado por S.H.I.E.L.D. para proteger la Tierra de amenazas extraordinarias. Su formación ha cambiado a lo largo de los años, pero siempre mantienen su compromiso de proteger a la humanidad.</p>
-        <!-- Más contenido histórico aquí -->
+        <h1 class="historia-titulo">Historia de los Vengadores</h1>
+
+        <!-- Sección 1: Fundación -->
+        <section class="historia-section">
+            <img src="img/imagen11.jfif" alt="Fundación de los Vengadores" class="historia-imagen">
+            <h2 class="historia-subtitulo">La Fundación (1963)</h2>
+            <p class="historia-texto">
+                Los Vengadores fueron fundados en 1963 cuando Loki, el dios de las mentiras, intentó conquistar la Tierra. 
+                Iron Man, Thor, Hulk, Ant-Man y la Avispa se unieron para detenerlo, formando el equipo original bajo la 
+                dirección de Nick Fury. Esta alianza marcó el inicio de una nueva era para los superhéroes.
+            </p>
+        </section>
+
+        <!-- Sección 2: La Era Clásica -->
+        <section class="historia-section">
+            <img src="img/imagen12.jfif" alt="Vengadores clásicos" class="historia-imagen">
+            <h2 class="historia-subtitulo">La Era Clásica (1970-1990)</h2>
+            <p class="historia-texto">
+                En los años 70 y 80, el equipo evolucionó con nuevos miembros como el Capitán América, recién 
+                descongelado de su hibernación. Juntos enfrentaron amenazas cósmicas como Thanos y Galactus, 
+                estableciendo su reputación como los defensores más poderosos de la Tierra.
+            </p>
+        </section>
+
+        <!-- Sección 3: Guerra Civil -->
+        <section class="historia-section">
+            <img src="img/imagen13.jpg" alt="Guerra Civil" class="historia-imagen">
+            <h2 class="historia-subtitulo">Guerra Civil (2006)</h2>
+            <p class="historia-texto">
+                El Acta de Registro Superhumano dividió al equipo en dos facciones: Iron Man a favor del registro 
+                gubernamental y Capitán América liderando la resistencia. Este conflicto interno debilitó al equipo 
+                temporalmente, pero finalmente se reconciliaron para enfrentar amenazas mayores.
+            </p>
+        </section>
+
+        <!-- Sección 4: Era Moderna -->
+        <section class="historia-section">
+            <img src="img/imagen14.jfif" alt="Vengadores modernos" class="historia-imagen">
+            <h2 class="historia-subtitulo">La Era Moderna (2012-Presente)</h2>
+            <p class="historia-texto">
+                Con la inclusión de nuevos héroes como Pantera Negra, Doctor Strange y Capitana Marvel, los Vengadores 
+                enfrentaron su mayor desafío: el Chasquido de Thanos. Tras recuperar a los desaparecidos, el equipo 
+                continúa protegiendo la Tierra de amenazas interdimensionales y alienígenas.
+            </p>
+        </section>
     </div>
 </body>
 </html>
